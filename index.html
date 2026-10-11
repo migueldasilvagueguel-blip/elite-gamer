@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elite Gamer — Loja e Checkout Pix</title>
+<style>
+:root{--bg:#090b12;--panel:#131722;--gold:#ffd43b;--orange:#ff6a00;--text:#f7f7fb;--muted:#aab0c0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#3b190c 0,#11121b 38%,var(--bg) 78%);font-family:Arial,Helvetica,sans-serif;color:var(--text)}
+header{padding:18px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff18;background:#080910b8}
+.logo{font-weight:900;letter-spacing:1px}.logo span{color:var(--gold)}.tag{font-size:12px;color:var(--gold);border:1px solid #ffd43b66;padding:8px 10px;border-radius:20px}
+main{max-width:980px;margin:auto;padding:30px 18px 60px}.hero{position:relative;overflow:hidden;border:1px solid #ff8a2a66;border-radius:24px;padding:34px 24px;background:linear-gradient(125deg,#25110c,#171725 55%,#351507);box-shadow:0 20px 70px #0008}
+.hero:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:#ff7a0022;right:-70px;top:-70px;filter:blur(4px)}
+.kicker{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:3px}.hero h1{font-size:clamp(34px,7vw,60px);line-height:.98;margin:14px 0}.hero h1 em{font-style:normal;color:var(--gold);text-shadow:0 0 22px #ff9d244d}.hero p{color:#d4d6df;max-width:520px;line-height:1.6}
+.price{font-size:42px;font-weight:900;margin:20px 0 6px}.price small{font-size:14px;color:var(--muted);font-weight:normal}.cta,button{border:0;border-radius:12px;background:linear-gradient(90deg,var(--gold),#ff8a00);color:#18100a;font-weight:900;padding:16px 22px;font-size:16px;cursor:pointer;box-shadow:0 8px 24px #ff7a0030}.cta{display:inline-block;text-decoration:none;margin-top:12px}
+.note{font-size:12px;color:var(--muted);line-height:1.5}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.feature,.panel{background:var(--panel);border:1px solid #ffffff15;border-radius:16px;padding:18px}.feature b{display:block;color:var(--gold);margin-bottom:6px}.feature span{font-size:13px;color:var(--muted)}
+.panel{margin-top:20px}.panel h2{margin-top:0}.fieldgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:13px;color:#e6e7ee}input{width:100%;padding:13px;border-radius:10px;border:1px solid #373b4c;background:#0b0e16;color:white;font-size:15px}input:focus{outline:2px solid #ffad25}.hidden{display:none}.paybox{text-align:center}.paybox img{width:210px;height:210px;background:white;padding:10px;border-radius:12px}.pixkey{overflow-wrap:anywhere;background:#090c14;padding:12px;border:1px dashed #666b7a;border-radius:10px;margin:12px 0;color:#ffd43b}.success{color:#80f0ad}.warning{border-left:3px solid var(--gold);padding:10px 12px;background:#ffd43b0d;color:#d6d8e1;font-size:12px;line-height:1.5}
+footer{text-align:center;color:#73798a;font-size:12px;padding:25px}
+@media(max-width:600px){.features{grid-template-columns:1fr}.fieldgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding:27px 20px}}
+</style>
+
+<style>
+.hidden{display:none!important}
+.backbtn{margin:0 0 14px;background:#242838;color:#fff;box-shadow:none;padding:11px 15px;font-size:13px}
+.page-view{animation:fadein .18s ease}
+@keyframes fadein{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+</style>
+
+</head>
+<body>
+<header><div class="logo">ELITE<span>GAMER</span></div><div class="tag">OFERTA DIGITAL</div></header>
+<main>
+<div id="landingView" class="page-view">
+<section class="hero">
+<div class="kicker">DROP ESPECIAL • TEMPO LIMITADO</div>
+<h1>SUBA DE NÍVEL.<br><em>JOGUE COM ESTILO.</em></h1>
+<p>Uma oferta para quem vive o universo gamer. Confira os detalhes do produto antes de comprar e finalize com praticidade.</p>
+<div class="price">R$ 29,99 <small>pagamento único</small></div>
+<button class="cta" id="showForm" type="button">QUERO ADQUIRIR AGORA ↗</button>
+<p class="note">Layout demonstrativo independente; não é um site oficial do Free Fire nem da Garena.</p>
+</section>
+<div class="features">
+<div class="feature"><b>⚡ Rápido</b><span>Cadastro simples e checkout direto.</span></div>
+<div class="feature"><b>🎮 Gamer</b><span>Visual escuro com destaque dourado.</span></div>
+<div class="feature"><b>🔒 Privacidade</b><span>Esta demonstração não envia nem armazena seus dados.</span></div>
+</div>
+
+</main>
+
+</div>
+<div id="checkoutView" class="page-view hidden">
+<p><button type="button" class="backbtn" data-back="landing">← VOLTAR À OFERTA</button></p>
+<section id="cadastro" class="panel">
+<h2>Seus dados para continuar</h2>
+<p class="note">Preencha somente em uma versão real e segura do site, com política de privacidade e proteção de dados configuradas.</p>
+<form id="buyerForm">
+<div class="fieldgrid">
+<div class="field full"><label for="nome">Nome completo</label><input id="nome" name="nome" autocomplete="name" required placeholder="Seu nome"></div>
+<div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="voce@email.com"></div>
+<div class="field"><label for="telefone">Telefone</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" required placeholder="(11) 99999-9999"></div>
+<div class="field full"><label for="cpf">CPF (somente se necessário)</label><input id="cpf" name="cpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00"></div>
+</div>
+<p class="note">Nesta prévia, os campos não são enviados a nenhum servidor. Não use dados reais enquanto o site não estiver conectado a um checkout seguro.</p>
+<button type="submit">CONTINUAR PARA O PIX — R$ 29,99</button>
+</form>
+</section>
+</div>
+<div id="paymentView" class="page-view hidden">
+<p><button type="button" class="backbtn" data-back="checkout">← VOLTAR AOS DADOS</button></p>
+<section id="pagamento" class="panel paybox">
+<h2>Pagamento via Pix</h2>
+<p>Valor do pedido: <strong>R$ 29,99</strong></p>
+<p>Sua cobrança Pix exclusiva será criada pela AmploPay. Confira o valor e os dados do recebedor no aplicativo do seu banco antes de confirmar.</p>
+<div class="pixkey" id="pixkey" aria-live="polite">Preencha seus dados para gerar a cobrança.</div>
+<img id="pixImage" class="hidden" alt="QR Code Pix" style="margin:12px auto" />
+<p id="pixExpiry" class="note"></p>
+<p class="note">Tipo: Pix estático reutilizável. Confira o nome do recebedor e o valor antes de confirmar.</p>
+<button id="copyPix" type="button">COPIAR PIX COPIA E COLA</button>
+<p id="copyStatus" class="note" aria-live="polite"></p>
+<div class="warning" style="text-align:left;margin-top:16px">Pague somente se o nome do recebedor e o valor estiverem corretos no seu banco. O pagamento só deve ser considerado confirmado após validação pelo servidor.</div>
+</section>
+</div>
+</main>
+<footer>© 2026 Elite Gamer • Demonstração de página de vendas</footer>
+
+<script>
+(function(){
+  const views = {
+    landing: document.getElementById('landingView'),
+    checkout: document.getElementById('checkoutView'),
+    payment: document.getElementById('paymentView')
+  };
+  function showView(name) {
+    Object.keys(views).forEach(function(key) {
+      views[key].classList.toggle('hidden', key !== name);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  async function generatePixForOrder() {
+    const keyEl = document.getElementById('pixkey');
+    const statusEl = document.getElementById('copyStatus');
+    const imageEl = document.getElementById('pixImage');
+    const expiryEl = document.getElementById('pixExpiry');
+    keyEl.textContent = 'Criando cobrança Pix segura…';
+    statusEl.textContent = '';
+    imageEl.classList.add('hidden');
+    expiryEl.textContent = '';
+    document.getElementById('copyPix').disabled = true;
+    try {
+      const response = await fetch('/api/pix/create', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({name: document.getElementById('nome').value.trim(), email: document.getElementById('email').value.trim(), phone: document.getElementById('telefone').value.trim(), document: document.getElementById('cpf').value.trim()})
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Não foi possível criar a cobrança. Tente novamente.');
+      keyEl.textContent = data.code;
+      if (data.image) { imageEl.src = data.image; imageEl.classList.remove('hidden'); }
+      if (data.expiresAt) expiryEl.textContent = 'Válido até: ' + new Date(data.expiresAt).toLocaleString('pt-BR');
+      document.getElementById('copyPix').disabled = false;
+      document.getElementById('copyPix').textContent = 'COPIAR PIX COPIA E COLA';
+    } catch (err) {
+      keyEl.textContent = 'Não foi possível gerar o Pix.';
+      statusEl.textContent = err.message;
+    }
+  }
+  document.getElementById('showForm').addEventListener('click', function() {
+    showView('checkout');
+  });
+  document.getElementById('buyerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!e.currentTarget.reportValidity()) return;
+    showView('payment');
+    generatePixForOrder();
+  });
+  document.querySelectorAll('[data-back="landing"]').forEach(function(btn) {
+    btn.addEventListener('click', function(){ showView('landing'); });
+  });
+  document.querySelectorAll('[data-back="checkout"]').forEach(function(btn) {
+    btn.addEventListener('click', function(){ showView('checkout'); });
+  });
+  document.getElementById('copyPix').disabled = true;
+  document.getElementById('copyPix').addEventListener('click', async function() {
+    const key = document.getElementById('pixkey').textContent.trim();
+    if (!key || key === 'Não foi possível gerar o Pix.' || key.startsWith('Criando cobrança')) return;
+    const status = document.getElementById('copyStatus');
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(key);
+      } else {
+        const temp = document.createElement('textarea');
+        temp.value = key;
+        temp.setAttribute('readonly', '');
+        temp.style.position = 'fixed';
+        temp.style.opacity = '0';
+        document.body.appendChild(temp);
+        temp.select();
+        temp.setSelectionRange(0, temp.value.length);
+        const copied = document.execCommand('copy');
+        document.body.removeChild(temp);
+        if (!copied) throw new Error('copy failed');
+      }
+      status.textContent = 'Pix Copia e Cola copiado. Confira MEDINA e R$ 29,99 no aplicativo antes de confirmar.';
+      this.textContent = '✓ PIX COPIADO';
+    } catch (err) {
+      status.textContent = 'A cópia automática foi bloqueada pelo navegador. Toque e segure o código acima para copiá-lo.';
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById('pixkey'));
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
